@@ -1,0 +1,88 @@
+---
+title: "LBGT.rmd"
+author: "Gabriela Pat"
+date: "May 14, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(tigerstats)
+avast <-read.csv(file="avastivironal.csv",header=TRUE)
+LBGTguys <- filter(avast,LBGT == "yes")
+```
+
+# Introduction
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
+
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+
+# Methods
+
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using the LGBT as a test subject.
+
+#Results
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+Looking at the results from barcharts, chi-squared test, and fisher test it shows that those with aids, the placebo seemed to have worked. Those who did not have aids the placebo and the drug
+
+## Descriptive Results
+
+```{r}
+trialtbl=xtabs(~infected+treatment,data=LBGTguys)
+```
+
+I am observing how the drug treatment and the placebo treatments are working on the LGBT. I will be looking at whether the treatments are good or bad on the LGBT. 
+
+### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+
+```{r}
+barchartGC(trialtbl,type = "percent")
+```
+
+The bar chart proves that the placebo treatment did work better than the drug treatment. The placebo treatment worked extremely better than the drug treatment on those infected with aids. While those not infected with aids the placebo worked slightly better than the drug treatment. 
+
+### Numerical Descriptive Results
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+The columns show that both the drug and placebo treatments worked on those infected with aids.
+
+```{r}
+colPerc(trialtbl)
+```
+
+The rows show that only the drug treatment had better results than the placebo treatment. 
+
+```{r}
+rowPerc(trialtbl)
+```
+
+## Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+ 
+```{r}
+chisqtestGC(trialtbl, graph = TRUE)
+```
+
+The chi-squared test results are good because the p-value is 0. For this reason we shall choose to accept the null hypothesis and reject the alternative. 
+
+```{r}
+fisher.test(trialtbl)
+```
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The results from the bar chart show that the placebo treatment worked better than the drug treatment on those who were infected and were not infected with aids. 
