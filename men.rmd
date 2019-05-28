@@ -15,21 +15,32 @@ sex <- filter(avast,sex == "M")
 
 # Introduction
 
-<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
-
 A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
 
-# Methods
 
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
+
+
+
+# Methods
+ 
+ 
+I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using men only as a test subject.
+ 
+ 
+ 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using men only as a test subject. 
+ 
 
 #Results
 
+Looking at the results from barcharts, chi-squared test, and fisher test it shows that the treatments with and without the drug are not working for men. 
+
+
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-Looking at the results from barcharts, chi-squared test, and fisher test it shows that the treatments with and without the drug are not working for men. 
 
 ## Descriptive Results
 
@@ -39,31 +50,38 @@ trialtbl=xtabs(~infected+treatment,data=sex)
 
 ### Graphical Descriptive Results
 
+The bar chart results show that the men infected with aids taking the drug treatment have lower results than the men who are infected with aids taking the placebo treatment. While the men not infected with aids that are taking the drug treatment and the men not infected with aids who are taking the placebo treatment seem to have almost the same results except that the drug treatment is slightly higher. 
+
+
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
 ```{r}
 barchartGC(trialtbl,type = "percent")
 ```
 
-The bar chart results show that the men infected with aids taking the drug treatment have lower results than the men who are infected with aids taking the placebo treatment. While the men not infected with aids that are taking the drug treatment and the men not infected with aids who are taking the placebo treatment seem to have almost the same results except that the drug treatment is slightly higher. 
+
 
 ### Numerical Descriptive Results
 
+This we see that only the Infected with aids and taking the drugs is working. The infected with aids and taking the placebo is not not working and has the highest numbers. The none infected with taking the drug and the none infected placebo is almost the same, slightly different.
+
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
-The columns results show that both the placebo treatment and the drug treatment work better on the men who are infectected with aids. The men with aids and taking the drug treatment have a result of 4.35 and the men infected with aids taking the placebo have a result of 9.16. 
 
 ```{r}
 colPerc(trialtbl)
 ```
-
-The row results show that only the drug treatment worked on the men with aids. while the placebo had higher results when compared to the men who do not have aids. 
+In column we see that the both Men groups the drugs and the placebo have low numbers and both Men groups the none infected with drugs and the placebo have high numbers. 
 
 ```{r}
 rowPerc(trialtbl)
 ```
+The row results show that only the drug treatment worked on the men with aids. while the placebo had higher results when compared to the men who do not have aids.
 
 ## Inferential Results
+
+The Observed Counts of the treatment in Infected Men with aids taking the drugs is 213 and the placebo is 465. The none Infected Men with durgs is 4684 and with the placebo is 4613.The Counts Expected by Null with Infected Men with aids and taking the drugs is 4684. The none Infected Men with taking the placebo is 4613. The Counts Expected by Null that's Infected Men with aids and taking the drugs is 332.85. The Infected Men with aids taking the placebo is 345.15. The none Infected Men with drugs is 4564.15, and the none Infected Men taking the placebo is 4732.85. The Contributions to the chi-square statistic with the Infected Men with aids and taking the drugs is 43.15 and the Infected Men with aids taking the placebo is 41.52. Then, the non Infected Men taking the drugs is 3.15 and the none Infected Men taking the placebo is 3.03. The Chi-Square Statistic = 90.1943. The Degrees of Freedom of the table = 1. The P-Value = 0. Which means the p-values accepted the hypothesis is not null.
+
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
@@ -75,7 +93,12 @@ chisqtestGC(trialtbl, graph = TRUE)
 ```{r}
 fisher.test(trialtbl)
 ```
+The Fisher test is rejected because the p-value is < 2.2e-16 and we don't know the coreedt number thats less than. Our hypothesis on the fisher test is null.
+
+
 
 # Discussion and Conclusion
+
+
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
