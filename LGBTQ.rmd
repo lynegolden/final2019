@@ -1,5 +1,5 @@
 ---
-title: "LBGT.rmd"
+title: "LGBTQ.rmd"
 author: "Gabriela Pat"
 date: "May 14, 2019"
 output: html_document
@@ -15,31 +15,38 @@ LBGTguys <- filter(avast,LBGT == "yes")
 
 # Introduction
 
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. 
+
+
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+
 
 # Methods
+We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using LGBtQ only as a test subject.
+
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using the LGBT as a test subject.
-
 #Results
+
+Looking at the results from barcharts, chi-squared curve test, and fisher test, the columns and rows which shows that the treatment for infected LGBTQ with aids and taking the drugs is the lowest number. The treatment for LGBTQ infected with aids taking the placebo is the highest. In addition, the LGBTQ not infected with aids and taking the drugs is the second highst, and the LGBTQ not infected and taking the placebo is third hightest. Three results is not good.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-Looking at the results from barcharts, chi-squared test, and fisher test it shows that those with aids, the placebo seemed to have worked. Those who did not have aids the placebo and the drug
+
 
 ## Descriptive Results
+
+We look at the numbers from the barchart and discoverd that the only treatment that is the lowest for the LGBTQ infected with aids and taking the drugs. Then, the LGBTQ that used the treatment that is infected with aids and taking the placebo was the highest. Also the LGBTQ that is not infected with aids and taking the drugs is the second highest, then the LGBTQ  not infected with aids and taking the placebo is third highest
+
 
 ```{r}
 trialtbl=xtabs(~infected+treatment,data=LBGTguys)
 ```
-
-I am observing how the drug treatment and the placebo treatments are working on the LGBT. I will be looking at whether the treatments are good or bad on the LGBT. 
-
 ### Graphical Descriptive Results
+
+The barchart results show that the LGBTQ infected with aids and taking the drug treatment have the lowest on the barchart results is good wich is about 22%. The LGBTQ who are infected with aids taking the placebo treatment that has the highest results, which is not good wich is about 68%. While the LGBTQ not infected with aids taking the drug treatment is the second highest with about 43%, and then, LGBTQ fected with aids who are taking the placebo treatment is the third highest result with is about 45%.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
@@ -52,21 +59,29 @@ The bar chart proves that the placebo treatment did work better than the drug tr
 
 ### Numerical Descriptive Results
 
+Here we see that the LGBTQ infected with aids and taking the drugs is the lowest working with the numbers of 24.29. The LGBTQ that is infected with aids taking the placebo is the the highest number of 75.71,the LGBTQ not infected with aids and taking the placebo is the third highest with 47.59, and LGBTQ not infected with drugs have the second highest number of 52.41.
+
+
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
-The columns show that both the drug and placebo treatments worked on those infected with aids.
 
 ```{r}
 colPerc(trialtbl)
 ```
 
-The rows show that only the drug treatment had better results than the placebo treatment. 
+These columns show that the treatment for LGBTQ who do have aids did work.  While the drug treatment on LGBTQ without aids did not. The drug treatment on the LGBTQ with aids was 2.89 and the placebo treatment on LGBTQ with aids was 7.77 did work. The drug treatment on LGBTQ without aids was 97.11 and the placebo treatment on LGBTQ without aids is 92.23 both of these did not work.
 
 ```{r}
 rowPerc(trialtbl)
 ```
 
+These rows show that the the treatment for LGBTQ who do have aids did work. The drug treatment on the LGBTQ with aids was 24.29 and the placebo treatment on LGBTQ with aids was  75.71. The drug treatment on LGBTQ without aids did not work either. The drug treatment on LGBTQ without aids was  47.59 and the placebo treatment on LGBTQ without aids is 52.41. Both did not give good results.
+
+
 ## Inferential Results
+
+The Observed Counts of the treatment in Infected with aids LGBTQ taking the drugs is 34 and the placebo is 106. The none Infected LGBTQ with durgs is 1143 and with the placebo is 1259. The Counts Expected by Null, infected LGBTQ with aids and taking the drugs is 64.82. The Infected LGBTQ taking the placebo is 75.18. The Counts Expected by Null that's not infected LGBTQ with aids and taking the drugs is 1112.18. The not infected LGBTQ with aids taking the placebo is 1289.82. The Contributions to the chi-square statistic LGBTQ infected with aids and taking the drugs is 14.66 and the Infected with aids LGBTQ taking the placebo is  12.64. Then, the not infected with aids LGBTQ taking the drugs is 0.85 and the not infected with aids LGBTQ taking the placebo is 0.74. The Chi-Square Statistic = 27.955. The Degrees of Freedom of the table = 1. The P-Value = 0. Which means the p-values accepted the hypothesis only in these results.
+
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
@@ -81,8 +96,12 @@ The chi-squared test results are good because the p-value is 0. For this reason 
 fisher.test(trialtbl)
 ```
 
+The Fisher test is rejected because the p-value is < 4.23e-08 and we know the correct number is more than the p-value should be, therefore, our hypothesis on the fisher test is null and the alternative hypothesis: true odds ratio is not equal to 1. Then, 95 percent confidence interval:  0.2308342 0.5294225
+
 # Discussion and Conclusion
+
+We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the column and the row, which tells us the evidence of LGBTQ that is infected with aids and taking the drugs is the lowest and therefore, the treatment is working for the LGBTQ. Also, the LGBTQ infected with aids and taking the placebo had the highest results that lets us know that the treatment wasn't working. Also, the LGBTQ not infected and taking the drugs and not infected and taking the placebo was slightly diferent numbers that lets us know these two in the treatment didn't work either. Only one has a good outcome, the one with infected with aids and taking the drugs.
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-The results from the bar chart show that the placebo treatment worked better than the drug treatment on those who were infected and were not infected with aids. 
+ 

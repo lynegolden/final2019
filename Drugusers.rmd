@@ -15,22 +15,28 @@ Ivdrug <- filter(avast,Ivdrug == "user")
 
 # Introduction
 
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation.
+
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+
 
 # Methods
 
-<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using IVdrug users only as a test subject.
 
-I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be only using drug users as test subjects.
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
 
 #Results
 
+The results show that the IVdrug users that is infected with aids and is taking the drugs shows that their treatment is not working for them. However, the IVdrug users that is infected with aids and taking the placebo is working for this group. Also, the IVdrug users not infected with aids and taking drugs, and the IVdrug users not infected and taking the placebo is exactly the same but this treatment is not working for these subjects either.
+
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
+
+We look at the numbers from the barchart and discoverd that the only treatment that worked was the IVdrugs users infected with aids and taking the placebo. The IVdrug users that used the treatment that is infected with aids and taking the drugs was the hightest therefore, this treatment was not working. Also the IVdrug users that is not infected with aids and taking the drugs, then the IVdrug users not infected with aids and taking the placebo is exactly the same visually and they have the next hightest numbers showing us that these treatment didn't work either.
 
 ```{r}
 trialtbl=xtabs(~infected+treatment,data=Ivdrug)
@@ -38,6 +44,8 @@ trialtbl=xtabs(~infected+treatment,data=Ivdrug)
 
 
 ### Graphical Descriptive Results
+
+The bar chart results show that the IVdrug users infected with aids taking the drug treatment have the highest results than the IVdrug users who are infected with aids taking the placebo treatment that has the lowest results. While the IVdrug users not infected with aids taking the drug treatment and the IVdrug users not infected with aids who are taking the placebo treatment seem to have the same results and have the next highest results.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
@@ -47,17 +55,28 @@ barchartGC(trialtbl,type = "percent")
 
 ### Numerical Descriptive Results
 
+This we see that the IVdrug users only Infected with aids and taking the placebo is working with the numbers of 27.62. The IVdrug users that is infected with aids and taking the drugs has the highest numbers of 72.38. The IVdrug users not infected with aids and taking the drug with the numbers of 49.05, and the Men not infected with aids and taking the placebo is almost the same, and have the numbers of 50.95.
+
+
+
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ```{r}
 colPerc(trialtbl)
 ```
+In the column for treatment we see that both IVdrug users groups that's infected with aid and taking the drugs and the placebo have low numbers and both IVdrug users groups that's not infected with aids taking drugs and taking the placebo have high numbers. 
+
 
 ```{r}
 rowPerc(trialtbl)
 ```
 
+The row results show that only the placebo treatment worked on the IVdrug users infected with aids. While the IVdrug users taking the drugs and infected with aids have higher results.The IVdrug user without being infected with aids and taking the drug treatment, and the Men not infected with aids and taking the placebo have the next highest results.
+
 ## Inferential Results
+
+The Observed Counts of the treatment in Infected with aids IVdrugs users taking the drugs is 76 and the placebo is 29. The none Infected IVdrug users with durgs is 1007 and with the placebo is 10046. The Counts Expected by Null, infected IVdrug users with aids and taking the drugs is 52.69. The Infected IVdrug users taking the placebo is 52.31. The Counts Expected by Null that's not infected with aids IVdrug users and taking the drugs is 1030.31. The Infected IVdrug users not infected with aids taking the placebo is 1022.69.  The Contributions to the chi-square statistic infected with aids IVdrug users and taking the drugs is 10.31 and the Infected with aids IVdrug users taking the placebo is 10.38. Then, the not infected with aids IVdrug users taking the drugs is 0.53 and the not infected with aids IVdrug users taking the placebo is 0.53. The Chi-Square Statistic = 20.8264. The Degrees of Freedom of the table = 1. The P-Value = 0. Which means the p-values accepted the hypothesis is not null in these results.
+
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
@@ -69,6 +88,10 @@ chisqtestGC(trialtbl, graph = TRUE)
 fisher.test(trialtbl)
 ```
 
-# Discussion and Conclusion
+The Fisher test is rejected because the p-value is < 2.998e-06 and we know the correct number is more than the p-value should be, therefore, our hypothesis on the fisher test is null.
 
+# Discussion and Conclusion
+  
+We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the column and the row, which tells us the evidence of IVdrug users that is infected with aids and taking the drugs is the highest and therefore, the treatment wasn't working for the IVdrug users. However, the IVdrug users infected with aids and taking the placebo had the lowest results that lets us know that the treatment was working. Also, the IVdrug users not infected and taking the drugs and not infected and taking the placebo was exactly the same on some  numbers and on the barchart that lets us know these two in the treatment didn't work either.  
+  
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->

@@ -26,7 +26,7 @@ A new  preventative aides (abacavirinol) is under test in clinical trials. Analy
 # Methods
  
  
-I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using men only as a test subject.
+We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using men only as a test subject.
  
  
  
@@ -36,13 +36,15 @@ I will use barcharts, chi-squared test, and fisher tests to analyze the effectiv
 
 #Results
 
-Looking at the results from barcharts, chi-squared test, and fisher test it shows that the treatments with and without the drug are not working for men. 
+Looking at the results from barcharts, chi-squared curve test, and fisher test it shows that the treatment for infected Men with aids is the better numbers. The treatment for Men infected with aids taking the placebo is the highest. In addition, the Men not infected with aids and taking the drugs, and the Men not infected and taking the placebo is close to each other, but still is higher than the Men infected with aids and taking the drugs, therefore we come to the conclusion that these two treatments didn't work either.
 
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 
 ## Descriptive Results
+We look at the numbers from the barchart and discoverd that the only treatment that worked was the Men infected with aids and taking the drugs. The Men that used the treatment that is infected with aids and taking the placebo was the hightest therefore, this treatment was not working. Also the Men that is not infected with aids and taking the drugs, then the Men not infected with aids and taking the placebo were very close visually and they had the second and third hightest numbers showing us that these treatment didn't work either.
+
 
 ```{r}
 trialtbl=xtabs(~infected+treatment,data=sex)
@@ -71,12 +73,13 @@ This we see that only the Infected with aids and taking the drugs is working. Th
 ```{r}
 colPerc(trialtbl)
 ```
-In column we see that the both Men groups the drugs and the placebo have low numbers and both Men groups the none infected with drugs and the placebo have high numbers. 
+
+In the column for treatment we see that both Men groups that's infected with aid and taking the drugs and the placebo have low numbers and both Men groups with the none infected aids with drugs and the placebo have high numbers. 
 
 ```{r}
 rowPerc(trialtbl)
 ```
-The row results show that only the drug treatment worked on the men with aids. while the placebo had higher results when compared to the men who do not have aids.
+The row results show that only the drug treatment worked on the men infected with aids. While the placebo with infected had higher results when compared to the Men who do not have aids, without being infected .
 
 ## Inferential Results
 
@@ -93,12 +96,13 @@ chisqtestGC(trialtbl, graph = TRUE)
 ```{r}
 fisher.test(trialtbl)
 ```
-The Fisher test is rejected because the p-value is < 2.2e-16 and we don't know the coreedt number thats less than. Our hypothesis on the fisher test is null.
+The Fisher test is rejected because the p-value is < 2.2e-16 and we don't know the correct number thats less than. Our hypothesis on the fisher test is null, because the p-value is over 0.5.
+
 
 
 
 # Discussion and Conclusion
-
+We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the column and the row, which tells us the evidence of Men that is infected with aids and taking the drugs is the lowest and therefore, the treatment was working for those men. However, the Men infected with aids and taking the placebo had the hightest results that lets us know that the treatment wasn't working. Also, the Men not infected and taking the drugs and not infected and taking the placebo was very close and very close on all the numbers and on the barchart that lets us know these two in the treatment didn't work either.
 
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->

@@ -14,17 +14,22 @@ avast <-read.csv(file="avastivironal.csv",header=TRUE)
 
 # Introduction
 
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. 
+
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+
 
 # Methods
 
+We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using 
+Allofthem only as a test subject.
+
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using all the women, men, drug users, and lgbt as test subjects.
-
 #Results
+
+The results show that the IVdrug users that is infected with aids and is taking the drugs shows that their treatment is not working for them. However, the IVdrug users that is infected with aids and taking the placebo is working for this group. Also, the IVdrug users not infected with aids and taking drugs, and the IVdrug users not infected and taking the placebo is exactly the same but this treatment is not working for these subjects either.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 

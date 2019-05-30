@@ -15,59 +15,70 @@ sex <- filter(avast,sex == "F")
 
 # Introduction
 
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation.
+
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+
 
 # Methods
+We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using women only as a test subject.
+
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
-I will use barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section I will be using women only as a test subject.
-
 #Results
+
+Looking at the results from barcharts, chi-squared curve test, and fisher test, the columns and rows which shows that the treatment for infected Women with aids and taking the drugs is the lowest number. The treatment for Women infected with aids taking the placebo is the highest. In addition, the Women not infected with aids and taking the drugs is the third highst, and the Women not infected and taking the placebo is second hightest. All of these results is not good
+
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
-Looking at the results from barcharts, chi-squared test, and fisher test it shows that the treatments with and without the drug are not working for women. 
-
 ## Descriptive Results
+
+We look at the numbers from the barchart and discoverd that the only treatment that is the highest for the Women infected with aids and taking the drugs. Then, the Women that used the treatment that is infected with aids and taking the placebo was the lowest. Also the Women that is not infected with aids and taking the drugs is the third highest, then the Women not infected with aids and taking the placebo is second highest.
 
 ```{r}
 trialtbl=xtabs(~infected+treatment,data=sex)
 ```
-
-I am observing how the drug treatment and the placebo treatments are working on women. I will be looking at whether the treatments are good or bad on women. 
-
 ### Graphical Descriptive Results
+
+The barchart results show that the Women infected with aids and taking the drug treatment have the highest on the barchart results is not good wich is about 59%. The Women who are infected with aids taking the placebo treatment that has the lower results, which is not good wich is about 39%. While the Women not infected with aids taking the drug treatment is the third highest with about 48%, and then, Women fected with aids who are taking the placebo treatment is the second highest result with is about 50%, which all four are not good.
+
+
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
 ```{r}
 barchartGC(trialtbl,type = "percent")
 ```
-
-The bar chart proves that it is not working for women.
-
 ### Numerical Descriptive Results
+
+This we see that the Women infected with aids and taking the drugs is the highest working with the numbers of 58.82. The Women that is infected with aids taking the placebo is the the lowest number of  41.18,the Women not infected with aids and taking the placebo is the sencond highest with 51.94, and Women not infected with drugs have the third highest number of 48.06.
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
-These columns show that the treatment for women who do have aids did work.  While the drug treatment on women without aids did not The drug treatment on the women with aids was 3.69 and the placebo treatment on women with aids was 2.42.work. The drug treatment on women without aids was 96.31 and the placebo treatment on women without aids is 97.58.
+
 
 ```{r}
 colPerc(trialtbl)
 ```
+These columns show that the treatment for women who do have aids did work.  While the drug treatment on women without aids did not. The drug treatment on the women with aids was 3.69 and the placebo treatment on women with aids was 2.42.work. The drug treatment on women without aids was 96.31 and the placebo treatment on women without aids is 97.58.
 
-These rows show that the the treatment for women who do have aids did not work. The drug treatment on the women with aids was 58.82 and the placebo treatment on women with aids was  41.18. The drug treatment on women without aids did not work either. The drug treatment on women without aids was  48.06 and the placebo treatment on women without aids is 51.94.Both did not give good results. 
+ 
  
 
 ```{r}
 rowPerc(trialtbl)
 ```
 
+These rows show that the the treatment for women who do have aids did not work. The drug treatment on the women with aids was 58.82 and the placebo treatment on women with aids was  41.18. The drug treatment on women without aids did not work either. The drug treatment on women without aids was  48.06 and the placebo treatment on women without aids is 51.94.Both did not give good results. All for have no good results.
+
+
 ## Inferential Results
 
+
+The Observed Counts of the treatment in Infected with aids Women taking the drugs is 423 and the placebo is 612. The none Infected Allofthem subjects with durgs is 10168 and with the placebo is 10540. The Counts Expected by Null, infected Allofthem subjects with aids and taking the drugs is 504.15. The Infected Allofthem subjects taking the placebo is 530.85. The Counts Expected by Null that's not infected Allofthem subjects with aids and taking the drugs is 10086.85. The not infected Allofthem subjects with aids taking the placebo is 10621.15.  The Contributions to the chi-square statistic Allofthem subjects infected with aids and taking the drugs is 13.06 and the Infected with aids Allofthem subjects taking the placebo is 12.40. Then, the not infected with aids Allofthem subjects taking the drugs is 0.65 and the not infected with aids Allofthem subjects taking the placebo is 0.62. The Chi-Square Statistic = 26.4104. The Degrees of Freedom of the table = 1. The P-Value = 0. Which means the p-values accepted the hypothesis is not null in these results.
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 ```{r}
