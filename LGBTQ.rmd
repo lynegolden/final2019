@@ -1,6 +1,6 @@
 ---
 title: "LGBTQ.rmd"
-author: "Gabriela Pat"
+author: "Lyne Golden"
 date: "May 14, 2019"
 output: html_document
 ---

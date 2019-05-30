@@ -1,6 +1,6 @@
 ---
 title: "women.rmd"
-author: "Gabriela Pat"
+author: "Lyne Golden"
 date: "May 14, 2019"
 output: html_document
 ---
@@ -104,7 +104,7 @@ We conclude, that our hypothesis is null and that looking at all the charts: chi
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the column and the row, which tells us the evidence of Women that is infected with aids and taking the drugs is the highest and therefore, the treatment wasn't working for the Women. Also, the Women infected with aids and taking the placebo had the lowest results this still was too high so, we know that the treatment wasn't working. Also, the Women not infected and taking the drugs and not infected and taking the placebo was slightly diferent numbers that lets us know these two in the treatment didn't work either. None of these were good conclusions.
+
 
 
 
