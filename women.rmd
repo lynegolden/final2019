@@ -22,6 +22,7 @@ A new  preventative aides (abacavirinol) is under test in clinical trials. Analy
 
 
 # Methods
+
 We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using women only as a test subject.
 
 
@@ -43,8 +44,7 @@ trialtbl=xtabs(~infected+treatment,data=sex)
 ```
 ### Graphical Descriptive Results
 
-The barchart results show that the Women infected with aids and taking the drug treatment have the highest on the barchart results is not good wich is about 59%. The Women who are infected with aids taking the placebo treatment that has the lower results, which is not good wich is about 39%. While the Women not infected with aids taking the drug treatment is the third highest with about 48%, and then, Women fected with aids who are taking the placebo treatment is the second highest result with is about 50%, which all four are not good.
-
+The barchart results show that the Women infected with aids and taking the drug treatment have the highest on the barchart results is not good wich is about 59%. The Women who are infected with aids taking the placebo treatment that has the lower results, which is not good wich is about 39%. While the Women not infected with aids taking the drug treatment is the third highest with about 48%, and then, Women fected with aids who are taking the placebo treatment is the second highest result with is about 50%.
 
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
@@ -78,7 +78,9 @@ These rows show that the the treatment for women who do have aids did not work. 
 ## Inferential Results
 
 
-The Observed Counts of the treatment in Infected with aids Women taking the drugs is 423 and the placebo is 612. The none Infected Allofthem subjects with durgs is 10168 and with the placebo is 10540. The Counts Expected by Null, infected Allofthem subjects with aids and taking the drugs is 504.15. The Infected Allofthem subjects taking the placebo is 530.85. The Counts Expected by Null that's not infected Allofthem subjects with aids and taking the drugs is 10086.85. The not infected Allofthem subjects with aids taking the placebo is 10621.15.  The Contributions to the chi-square statistic Allofthem subjects infected with aids and taking the drugs is 13.06 and the Infected with aids Allofthem subjects taking the placebo is 12.40. Then, the not infected with aids Allofthem subjects taking the drugs is 0.65 and the not infected with aids Allofthem subjects taking the placebo is 0.62. The Chi-Square Statistic = 26.4104. The Degrees of Freedom of the table = 1. The P-Value = 0. Which means the p-values accepted the hypothesis is not null in these results.
+The Observed Counts of the treatment in Infected with aids Women taking the drugs is 210 and the placebo is 147. The none Infected Women with durgs is 5484 and with the placebo is 5927. The Counts Expected by Null, infected Women with aids and taking the drugs is 172.74. The Infected Women taking the placebo is 184.26. The Counts Expected by Null that's not infected Women with aids and taking the drugs is 5521.26. The not infected Women with aids taking the placebo is 5889.74.  The Contributions to the chi-square statistic Women infected with aids and taking the drugs is 8.04 and the Infected with aids Women taking the placebo is  7.54. Then, the not infected with aids Women taking the drugs is 0.25 and the not infected with aids Women taking the placebo is 0.24. The Chi-Square Statistic = 15.6339. The Degrees of Freedom of the table = 1. The P-Value = 1e-04. Which means the p-values accepted the hypothesis is not null in these results.
+
+
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 ```{r}
@@ -92,8 +94,20 @@ which shows that we shall reject the null hypothesis.
 fisher.test(trialtbl)
 ```
 
+
+The Fisher test is rejected because the p-value is < 6.596e-05 and we know the correct number is more than the p-value should be, therefore, our hypothesis on the fisher test is null and the alternative hypothesis: true odds ratio is not equal to 1. Then, 95 percent confidence interval:  1.240408 1.925729
+
 # Discussion and Conclusion
+
+We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the columns and the rows, which tells us the evidence of Women that is infected with aids and taking the drugs is the highest and therefore, the treatment wasn't working for the Women. Also, the Women infected with aids and taking the placebo had the lowest results that lets us know that the treatment wasn't working. Also, the Women not infected and taking the drugs and not infected and taking the placebo was slightly diferent numbers that lets us know these two in the treatment didn't work either. None of these were good conclusions.
+
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-Looking back at all the results that the barcharts, chi-squared tests, and fisher tests gave us on all the women, I can conclude that the both the drug and placebo treatments did not work on women. The placebo 
+We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the column and the row, which tells us the evidence of Women that is infected with aids and taking the drugs is the highest and therefore, the treatment wasn't working for the Women. Also, the Women infected with aids and taking the placebo had the lowest results this still was too high so, we know that the treatment wasn't working. Also, the Women not infected and taking the drugs and not infected and taking the placebo was slightly diferent numbers that lets us know these two in the treatment didn't work either. None of these were good conclusions.
+
+
+
+
+
+

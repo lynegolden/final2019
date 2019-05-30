@@ -15,7 +15,7 @@ sex <- filter(avast,sex == "M")
 
 # Introduction
 
-A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this!
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. 
 
 
 
@@ -36,15 +36,14 @@ We used barcharts, chi-squared test, and fisher tests to analyze the effectivene
 
 #Results
 
-Looking at the results from barcharts, chi-squared curve test, and fisher test it shows that the treatment for infected Men with aids is the better numbers. The treatment for Men infected with aids taking the placebo is the highest. In addition, the Men not infected with aids and taking the drugs, and the Men not infected and taking the placebo is close to each other, but still is higher than the Men infected with aids and taking the drugs, therefore we come to the conclusion that these two treatments didn't work either.
+Looking at the results from barcharts, chi-squared curve test, and fisher test, the columns and rows which shows that the treatment for infected Men with aids and taking the drugs is the lowest number, and shows that these results is working. The treatment for Men infected with aids taking the placebo is the highest. In addition, the Men not infected with aids and taking the drugs, and the Men not infected and taking the placebo is close to each other, but still is higher than the Men infected with aids and taking the drugs, therefore we come to the conclusion that these three treatments didn't work.
 
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 
 ## Descriptive Results
-We look at the numbers from the barchart and discoverd that the only treatment that worked was the Men infected with aids and taking the drugs. The Men that used the treatment that is infected with aids and taking the placebo was the hightest therefore, this treatment was not working. Also the Men that is not infected with aids and taking the drugs, then the Men not infected with aids and taking the placebo were very close visually and they had the second and third hightest numbers showing us that these treatment didn't work either.
-
+We look at the numbers from the barchart and discoverd that the only treatment that worked was the Men infected with aids and taking the drugs. Then, the Men that used the treatment that is infected with aids and taking the placebo was the hightest. Also the Men that is not infected with aids and taking the drugs, then the Men not infected with aids and taking the placebo were very close results and they had the second and third hightest numbers.
 
 ```{r}
 trialtbl=xtabs(~infected+treatment,data=sex)
@@ -52,7 +51,7 @@ trialtbl=xtabs(~infected+treatment,data=sex)
 
 ### Graphical Descriptive Results
 
-The bar chart results show that the men infected with aids taking the drug treatment have lower results than the men who are infected with aids taking the placebo treatment. While the men not infected with aids that are taking the drug treatment and the men not infected with aids who are taking the placebo treatment seem to have almost the same results except that the drug treatment is slightly higher. 
+The bar chart results show that the Men infected with aids taking the drug treatment have lower results than the Men who are infected with aids taking the placebo treatment. While the Men not infected with aids that are taking the drug treatment and the Men not infected with aids and taking the placebo treatment seem to have almost the same results except that the drug treatment is slightly higher. 
 
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
@@ -65,7 +64,7 @@ barchartGC(trialtbl,type = "percent")
 
 ### Numerical Descriptive Results
 
-This we see that only the Infected with aids and taking the drugs is working. The infected with aids and taking the placebo is not not working and has the highest numbers. The none infected with taking the drug and the none infected placebo is almost the same, slightly different.
+This we see that Men only Infected with aids and taking the drugs is working with the numbers of 31.42. The infected with aids and taking the placebo has the highest numbers of 68.58. The Men not infected with aids and taking the drug with the numbers of 50.38, and the Men not infected with aids and taking the placebo is almost the same, and have the numbers of 49.62.
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
@@ -79,7 +78,7 @@ In the column for treatment we see that both Men groups that's infected with aid
 ```{r}
 rowPerc(trialtbl)
 ```
-The row results show that only the drug treatment worked on the men infected with aids. While the placebo with infected had higher results when compared to the Men who do not have aids, without being infected .
+The row results show that only the drug treatment worked on the Men infected with aids. While the Men taking the placebo and infected with aids have higher results.The Men without being infected with aids and taking the drug treatment, and the Men not infected with aids and taking the placebohave the next two highest results.
 
 ## Inferential Results
 
@@ -96,8 +95,8 @@ chisqtestGC(trialtbl, graph = TRUE)
 ```{r}
 fisher.test(trialtbl)
 ```
-The Fisher test is rejected because the p-value is < 2.2e-16 and we don't know the correct number thats less than. Our hypothesis on the fisher test is null, because the p-value is over 0.5.
 
+The Fisher test is rejected because the p-value is < 2.2e-16 and we know the correct number is more than the p-value should be, therefore, our hypothesis on the fisher test is null and the alternative hypothesis: true odds ratio is not equal to 1.Then 95 percent confidence interval: 0.3798342 0.5345407.
 
 
 

@@ -23,19 +23,19 @@ A new  preventative aides (abacavirinol) is under test in clinical trials. Analy
 # Methods
 
 We used barcharts, chi-squared test, and fisher tests to analyze the effectiveness of this drug across the board. For this section we will be using 
-Allofthem only as a test subject.
+Allofthem only as the test subjects.
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
 #Results
 
-The results show that the IVdrug users that is infected with aids and is taking the drugs shows that their treatment is not working for them. However, the IVdrug users that is infected with aids and taking the placebo is working for this group. Also, the IVdrug users not infected with aids and taking drugs, and the IVdrug users not infected and taking the placebo is exactly the same but this treatment is not working for these subjects either.
+The results show that the Allofthem subjects that is infected with aids and is taking the drugs shows that their treatment is not working for them. Also, the Allofthem subjects that is infected with aids and taking the placebo is not working for this group. Last, the Allofthem subjects not infected with aids and taking drugs, and the Allofthem subjects not infected and taking the placebo is slightly different, but this treatment is not working for these Allofthem subjects either.None of these worked in these clinical trial test.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
 
-I am observing how the drug treatment and the placebo treatments are working on all the women, men, drug users, and lgbt. I will be looking at whether the treatments are good or bad on all women, men, drug users, and lgbt. 
+We are observing how the drug treatment and the placebo treatments are working on all the women, men, drug users, and lgbt guys. Also, we will be looking at whether the treatments are good or bad on all women, men, drug users, and lgbt guys. 
 
 
 ```{r}
@@ -43,6 +43,9 @@ trialtbl=xtabs(~infected+treatment,data=avast)
 ```
 
 ### Graphical Descriptive Results
+
+The bar chart results show that the Allofthem subjects infected with aids and taking the drug treatment have a lower barchartbut and the results is not good. The Allofthem subjects who are infected with aids taking the placebo treatment that has the highest results, which is not good. While the Allofthem subjects not infected with aids taking the drug treatment and the Allofthem subjects not infected with aids who are taking the placebo treatment is slightly different and have the next highest results, which is not good.
+
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
@@ -52,17 +55,25 @@ barchartGC(trialtbl,type = "percent")
 
 ### Numerical Descriptive Results
 
+This we see that the Allofthem subjects Infected with aids and taking the placebo is the highest working with the numbers of 59.13. The Allofthem subjects that is infected with aids taking the drugs is 49.10, not infected with aids and taking the placebo is almost the same, and have the numbers of 50.90.
+
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ```{r}
 colPerc(trialtbl)
 ```
 
+In the column for treatment we see that Allofthem subject groups that's infected with aid and taking the drugs and the placebo has the lowest number and both Allofthem subjects group that's not infected with aids taking drugs and taking the placebo have high numbers. 
+
 ```{r}
 rowPerc(trialtbl)
 ```
 
-## Inferential Results
+The row results show that the placebo treatment doesn't work on the Allofthem subjects infected with aids taking drugs. Also, the Allofthem subjects taking the drugs infected with aids have lower results.The Allofthem subjects  without being infected with aids and taking the drug treatment, and the Allofthem subjects not infected with aids and taking the placebo have the next highest results.
+
+### Inferential Results
+
+The Observed Counts of the treatment in Infected with aids Allofthem subjects taking the drugs is 423 and the placebo is 612. The none Infected Allofthem subjects with durgs is 10168 and with the placebo is 10540. The Counts Expected by Null, infected Allofthem subjects with aids and taking the drugs is 504.15. The Infected Allofthem subjects taking the placebo is 530.85. The Counts Expected by Null that's not infected Allofthem subjects with aids and taking the drugs is 10086.85. The not infected Allofthem subjects with aids taking the placebo is 10621.15.  The Contributions to the chi-square statistic Allofthem subjects infected with aids and taking the drugs is 13.06 and the Infected with aids Allofthem subjects taking the placebo is 12.40. Then, the not infected with aids Allofthem subjects taking the drugs is 0.65 and the not infected with aids Allofthem subjects taking the placebo is 0.62. The Chi-Square Statistic = 26.4104. The Degrees of Freedom of the table = 1. The P-Value = 0. Which means the p-values accepted the hypothesis is not null in these results.
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
@@ -74,6 +85,10 @@ chisqtestGC(trialtbl, graph = TRUE)
 fisher.test(trialtbl)
 ```
 
+The Fisher test is rejected because the p-value is < 2.333e-07 and we know the correct number is more than the p-value should be, therefore, our hypothesis on the fisher test is null and the alternative hypothesis: true odds ratio is not equal to 1. Then 95 percent confidence interval: 0.6295438 0.8148378.
+
 # Discussion and Conclusion
+
+We conclude, that our hypothesis is null and that looking at all the charts: chi-square curve, fisher test, barchart, the column and the row, which tells us the evidence of Allofthem subjects that is infected with aids and taking the drugs is the lowest and therefore, the treatment wasn't working for the Allofthem subjects. Also, the Allofthem subjects infected with aids and taking the placebo had the highest results that lets us know that the treatment wasn't working. Also, the Allofthem subjects not infected and taking the drugs and not infected and taking the placebo was slightly diferent numbers that lets us know these two in the treatment didn't work either. None of these were good conclusions.
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
